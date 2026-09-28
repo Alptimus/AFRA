@@ -1,0 +1,1 @@
+"""AFRA Test Suite."""
