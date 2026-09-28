@@ -1,0 +1,32 @@
+[project]
+name = "afra"
+version = "0.1.0"
+description = "Autonomous Financial Research Agent with Multi-Source Synthesis"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+
+[project.scripts]
+afra = "agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agent*", "config*", "tools*", "memory*", "synthesis*", "evaluation*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "integration: marks tests that require real API keys",
+    "slow: marks tests that take a long time to run",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
