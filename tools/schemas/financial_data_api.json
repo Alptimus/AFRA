@@ -1,0 +1,28 @@
+{
+  "name": "financial_data_api",
+  "description": "Retrieves structured financial data including income statement, balance sheet, cash flow statement, and key ratios for a publicly traded company. Use this tool when you need quantitative financial data for analysis, comparison, or calculation. Returns JSON of financial statement data.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol (e.g., AAPL, MSFT)"
+      },
+      "statement_type": {
+        "type": "string",
+        "enum": ["income_statement", "balance_sheet", "cash_flow", "ratios", "key_metrics"],
+        "description": "Type of financial data to retrieve"
+      },
+      "period": {
+        "type": "string",
+        "enum": ["annual", "quarterly"],
+        "description": "Reporting period (annual or quarterly)"
+      },
+      "years": {
+        "type": "integer",
+        "description": "Number of years/periods of data to retrieve (default 3)"
+      }
+    },
+    "required": ["ticker", "statement_type"]
+  }
+}

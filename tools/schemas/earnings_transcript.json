@@ -1,0 +1,23 @@
+{
+  "name": "earnings_transcript",
+  "description": "Retrieves earnings call transcript for a specific company, quarter, and year. Use this tool when you need management commentary, forward guidance, analyst Q&A, or qualitative insights about strategy and operations. Returns the full transcript text with speaker labels.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol (e.g., AAPL, MSFT)"
+      },
+      "quarter": {
+        "type": "string",
+        "enum": ["Q1", "Q2", "Q3", "Q4"],
+        "description": "Fiscal quarter (Q1 through Q4)"
+      },
+      "year": {
+        "type": "integer",
+        "description": "Fiscal year for the earnings call"
+      }
+    },
+    "required": ["ticker", "quarter", "year"]
+  }
+}

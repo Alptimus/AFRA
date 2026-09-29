@@ -1,0 +1,22 @@
+{
+  "name": "vector_db_search",
+  "description": "Searches the agent's long-term memory (vector database) for previously researched information. Use this tool BEFORE making external API calls to check if relevant data has already been gathered. This reduces redundant API calls and leverages accumulated research knowledge. Returns relevant document chunks with similarity scores.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Search query for semantic similarity search"
+      },
+      "top_k": {
+        "type": "integer",
+        "description": "Number of top results to return (default 5)"
+      },
+      "filter": {
+        "type": "object",
+        "description": "Optional metadata filters (e.g., {'ticker': 'AAPL', 'source_type': '10-K'} to narrow results)"
+      }
+    },
+    "required": ["query"]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sec_filing_search",
+  "description": "Search and retrieve SEC EDGAR filings for a publicly traded US company. Use this tool when you need official regulatory disclosures including annual reports (10-K), quarterly reports (10-Q), material event reports (8-K), or proxy statements (DEF 14A). Returns filing text and metadata.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol (e.g., AAPL, MSFT, TSLA)"
+      },
+      "filing_type": {
+        "type": "string",
+        "enum": ["10-K", "10-Q", "8-K", "DEF 14A"],
+        "description": "Type of SEC filing to retrieve"
+      },
+      "year": {
+        "type": "integer",
+        "description": "Filing year (defaults to most recent if omitted)"
+      }
+    },
+    "required": ["ticker", "filing_type"]
+  }
+}

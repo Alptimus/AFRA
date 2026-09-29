@@ -1,0 +1,19 @@
+{
+  "name": "fact_checker",
+  "description": "Cross-references a specific factual claim against multiple authoritative sources to verify its accuracy. Use this tool to verify numerical data, financial figures, company facts, or any claim before including it in a research report. Returns verification status, supporting evidence from each source checked, and an overall confidence score (0-1).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "claim": {
+        "type": "string",
+        "description": "The specific factual claim to verify (e.g., 'Apple revenue in Q3 2024 was $85.8 billion')"
+      },
+      "sources": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Optional list of source tools to check against. Defaults to ['financial_data_api', 'sec_filing_search', 'web_search']"
+      }
+    },
+    "required": ["claim"]
+  }
+}

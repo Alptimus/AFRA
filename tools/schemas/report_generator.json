@@ -1,0 +1,24 @@
+{
+  "name": "report_generator",
+  "description": "Formats researched data into a structured investment research report following a specified template. Use this tool as the final step after data gathering and synthesis to produce the formatted output. Supported templates: 'full_research', 'risk_assessment', 'competitive_analysis', 'earnings_review', 'company_profile'. Returns a formatted markdown report.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "template": {
+        "type": "string",
+        "enum": ["full_research", "risk_assessment", "competitive_analysis", "earnings_review", "company_profile"],
+        "description": "Report template to use"
+      },
+      "sections": {
+        "type": "object",
+        "description": "Dict mapping section names to their content. Each key should match a section in the template."
+      },
+      "sources": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "List of data sources used in the report"
+      }
+    },
+    "required": ["template", "sections"]
+  }
+}

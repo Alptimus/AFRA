@@ -1,0 +1,14 @@
+{
+  "name": "company_profile",
+  "description": "Retrieves basic company information including sector, industry, market capitalization, CEO, number of employees, and business description. Use this tool as a starting point for company research or when you need to classify a company's business segment and competitive context.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol (e.g., AAPL, MSFT)"
+      }
+    },
+    "required": ["ticker"]
+  }
+}

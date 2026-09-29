@@ -1,0 +1,23 @@
+{
+  "name": "peer_comparison",
+  "description": "Identifies peer companies in the same industry and retrieves comparative financial metrics. Use this tool for competitive analysis, relative valuation, or industry benchmarking. Returns a peer comparison matrix with rankings across financial metrics.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol of the target company"
+      },
+      "num_peers": {
+        "type": "integer",
+        "description": "Number of peer companies to compare (default 5)"
+      },
+      "metrics": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "List of metrics to compare (e.g., 'market_cap', 'pe_ratio', 'revenue_growth', 'profit_margin', 'roe'). Defaults to standard set."
+      }
+    },
+    "required": ["ticker"]
+  }
+}

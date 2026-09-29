@@ -1,0 +1,19 @@
+{
+  "name": "calculation_engine",
+  "description": "Performs financial calculations including DCF valuation, financial ratio computation, growth rate calculation, CAGR, WACC, and basic statistical analysis. Use this tool when you need to derive metrics from raw financial data rather than retrieving pre-computed figures. Returns results with intermediate calculation steps.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "calculation_type": {
+        "type": "string",
+        "enum": ["dcf", "ratio", "growth_rate", "cagr", "wacc", "margin", "yoy_change", "statistics", "custom"],
+        "description": "Type of financial calculation to perform"
+      },
+      "inputs": {
+        "type": "object",
+        "description": "Input values for the calculation. Structure depends on calculation_type. E.g., for 'ratio': {numerator, denominator, name}. For 'dcf': {cash_flows, discount_rate, terminal_growth_rate}. For 'cagr': {beginning_value, ending_value, periods}."
+      }
+    },
+    "required": ["calculation_type", "inputs"]
+  }
+}

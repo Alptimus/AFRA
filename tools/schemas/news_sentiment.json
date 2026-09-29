@@ -1,0 +1,22 @@
+{
+  "name": "news_sentiment",
+  "description": "Analyzes sentiment of recent news articles about a company or financial topic using NLP. Use this tool when you need to understand market sentiment, media coverage tone, or public perception. Returns individual article sentiment scores, summaries, and an overall sentiment assessment.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Company name, ticker, or topic to analyze sentiment for"
+      },
+      "num_articles": {
+        "type": "integer",
+        "description": "Number of articles to analyze (default 10)"
+      },
+      "lookback_days": {
+        "type": "integer",
+        "description": "Number of days to look back for articles (default 30)"
+      }
+    },
+    "required": ["query"]
+  }
+}

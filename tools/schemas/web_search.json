@@ -1,0 +1,22 @@
+{
+  "name": "web_search",
+  "description": "Performs web search for current news, analysis, and commentary about a company or financial topic. Use this tool when you need real-time information, recent developments, analyst opinions, or market commentary. Returns a list of URL, title, and content snippet tuples.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Search query string"
+      },
+      "num_results": {
+        "type": "integer",
+        "description": "Number of results to return (default 10)"
+      },
+      "date_range": {
+        "type": "string",
+        "description": "Optional date range filter (e.g., 'past_week', 'past_month', 'past_year')"
+      }
+    },
+    "required": ["query"]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "vector_db_store",
+  "description": "Stores new research findings in the agent's long-term memory (vector database) for future retrieval. Use this tool to persist important findings, data points, and analysis conclusions after completing research. Include metadata (ticker, date, source_type) for effective future filtering.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string",
+        "description": "The text content to store in memory"
+      },
+      "metadata": {
+        "type": "object",
+        "description": "Metadata for the content. Should include: ticker (str), date (str), source_type (str: '10-K', 'earnings_call', 'news', 'analysis'), confidence (float 0-1)"
+      }
+    },
+    "required": ["content", "metadata"]
+  }
+}
