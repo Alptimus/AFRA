@@ -188,4 +188,4 @@ The agent is assessed on **22 metrics** across 5 categories:
 
 ## 📄 License
 
-This project is submitted as part of the Zetheta Internship Programme, Project 1A.
+[MIT License](LICENSE)
